@@ -1,0 +1,9 @@
+.favorites {
+  width: 100%;
+  position: absolute;
+  top: 20%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  z-index: -1;
+}

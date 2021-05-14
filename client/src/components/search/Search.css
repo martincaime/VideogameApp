@@ -1,0 +1,36 @@
+.searchBar {
+  display: flex;
+  position: fixed;
+  left: 0;
+  top: 100px;
+  margin-left: 20px;
+  margin-right: 20px;
+  box-shadow: 0px 0px 5px rgb(0, 200, 200);
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 1;
+  background-color: rgb(0, 0, 0);
+}
+
+.searchInput {
+  outline: none;
+  border: none;
+  padding: 0px;
+  border-radius: 5px;
+  background: rgb(0, 0, 0);
+  color: rgb(240, 240, 240);
+  font-size: 15px;
+}
+
+.searchButton {
+  outline: none;
+  border: none;
+  border-radius: 0px 5px 5px 0px;
+  font-size: 15px;
+  background: rgb(0, 0, 0);
+  color: rgb(240, 240, 240);
+  border-left: 2px solid rgba(220, 220, 220, 0.7);
+  cursor: pointer;
+  padding: 0px 0px 0px 10px;
+  font-size: 15px;
+}

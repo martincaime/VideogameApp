@@ -1,0 +1,14 @@
+.videogames {
+  width: 100%;
+  position: absolute;
+  top: 130px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.loading {
+  height: 50px;
+  margin: auto;
+  margin-top: 300px;
+}

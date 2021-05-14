@@ -1,0 +1,33 @@
+.landing {
+  height: 100vh;
+  background: url('../../img/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.enterButton {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: rgb(240, 240, 240);
+  box-shadow: 0px 0px 15px rgb(0, 200, 200);
+  padding-right: 15px;
+  padding-left: 15px;
+  cursor: pointer;
+}
+
+.enterButton:hover {
+  background-color: rgba(0, 200, 200, 0.1);
+}
+
+.enterButton:active {
+  background-color: transparent;
+}

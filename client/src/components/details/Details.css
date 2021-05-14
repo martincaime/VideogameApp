@@ -1,0 +1,33 @@
+.detailsVideogameImage {
+  height: 300px;
+  margin-top: 20px;
+  border-radius: 15px;
+}
+
+.detailsVideogame {
+  border-radius: 15px;
+  display: block;
+  text-align: center;
+  height: 100%;
+  width: 1000px;
+  padding: 20px;
+  background-color: rgb(0, 0, 0);
+  color: rgb(240, 240, 240);
+  box-shadow: 0px 0px 10px rgb(0, 200, 200);
+  margin: auto;
+  margin-top: 160px;
+  margin-bottom: 40px;
+}
+
+.detailsGenresContent span, .detailsPlatformsContent span {
+  box-shadow: 0px 0px 5px rgb(0, 200, 200);
+  border-radius: 5px;
+  padding: 5px;
+  margin: 7px;
+}
+
+.loadingDetails {
+  height: 50px;
+  margin: auto;
+  margin-top: 300px;
+}
