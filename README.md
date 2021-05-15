@@ -1,3 +1,3 @@
-# Project - Videogame App
+# VideogameApp
 
-Built a web application with React, Redux, Express, PostgreSQL and Sequelize based on RAWR API.
+Videogame App made with React, Redux, Express, PostgreSQL and Sequelize based on RAWR API.

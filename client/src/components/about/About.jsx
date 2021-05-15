@@ -5,8 +5,7 @@ export default function About() {
   return (
     <div className='about'>
       <h2>About</h2>
-      <p>A web application for showing videogames.
-        Built with React, Redux, Express, PostgreSQL and Sequelize.</p>
+      <p>Videogame App made with React, Redux, Express, PostgreSQL and Sequelize based on RAWR API.</p>
     </div>
   )
 }
