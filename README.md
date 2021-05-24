@@ -1,4 +1,3 @@
-![weatherapp1](https://user-images.githubusercontent.com/77156341/119341835-9fe3e500-bc6a-11eb-80c8-b8f29c4d48d5.png)
 # VideogameApp
 
 Videogame App made with React, Redux, Express, PostgreSQL and Sequelize based on RAWR API.
