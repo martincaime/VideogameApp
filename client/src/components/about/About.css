@@ -1,11 +1,13 @@
 .about {
-  margin: 150px auto;
-  border-radius: 15px;
+  margin: 10rem auto;
+  border-radius: 0.5rem;
   height: 100%;
-  width: 1000px;
-  padding: 20px;
-  background-color: rgb(0, 0, 0);
-  color: rgb(240, 240, 240);
-  box-shadow: 0px 0px 10px rgb(0, 200, 200);
-  margin-bottom: 40px;
+  width: 65rem;
+  padding: 1rem;
+  color: #ffffff;
+  box-shadow: 0 0 1rem #00c8c8;
+}
+
+h2 {
+  margin: 0;
 }

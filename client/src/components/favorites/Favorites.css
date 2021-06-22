@@ -1,7 +1,7 @@
 .favorites {
   width: 100%;
   position: absolute;
-  top: 20%;
+  top: 9rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;

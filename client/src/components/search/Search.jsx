@@ -15,11 +15,10 @@ function Search(props) {
   }
   return (
     <div className='searchBar'>
-      <form
-        onSubmit={(e) => { handleSubmit(e) }}>
+      <form className='searchForm' onSubmit={(e) => { handleSubmit(e) }}>
         <input className='searchInput' type='text' placeholder='Videogame' value={videogame}
           onChange={(e) => handleChange(e)} />
-        <input className='searchButton' type='submit' value='Search' />
+        <input className='material-icons searchButton' type='submit' value='search' />
       </form>
     </div>
   )

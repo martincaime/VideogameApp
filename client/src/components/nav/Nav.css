@@ -5,41 +5,38 @@
   justify-content: space-between;
   align-items: center;
   width: 105%;
-  height: 80px;
-  background-color: rgb(0, 0, 0);
-  box-shadow: 0px 0px 10px rgb(0, 200, 200);
+  height: 5rem;
+  background-color: #000000;
+  box-shadow: 0 0 1rem #00c8c8;
+  color: #ffffff;
 }
 
 .navLogo {
-  width: 100px;
+  width: 6.5rem;
 }
 
-.aboutNav {
-  margin: 0px 10px;
-}
 .navLinks{
   display: flex;
   justify-content: center;
-  height: 60px;
+  height: 3.8rem;
 }
 
 .createVideogameNav {
-  margin-right: 90px;
+  margin-right: 5.5rem;
 }
 
 .link {
   text-decoration: none;
-  color: rgb(240, 240, 240);
 }
 
 .logo {
-  width: 170px;
-  height: 60px;
+  width: 10rem;
+  height: 4rem;
   object-fit: cover;
   object-position: center center;
-  border-radius: 15px;
+  border-radius: 0.5rem;
 }
 
 .favoritesVideogameNav {
-  margin: 0 10px;
+  margin: 0 1rem;
 }

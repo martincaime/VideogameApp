@@ -1,4 +1,4 @@
-const { Videogame, Genre } = require('../db');
+const { Videogame, Genre, Platform } = require('../db');
 const { API_KEY } = process.env;
 const router = require('express').Router();
 const axios = require('axios');
@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
         name: {
           [Op.like]: `%${name}%`
         }
-      }, include: Genre
+      }, include: [Genre, Platform]
     });
     Promise.all([apiVideogames, dbVideogames])
       .then(response => {
@@ -41,7 +41,7 @@ router.get('/', (req, res) => {
       return axios.get(`https://api.rawg.io/api/games?page=${pageNumber}&page_size=25&key=${API_KEY}`
       )
     };
-    let dbVideogames = Videogame.findAll( {include: Genre});
+    let dbVideogames = Videogame.findAll( {include: [Genre, Platform]});
     Promise.all([apiVideogames(1), apiVideogames(2), apiVideogames(3), apiVideogames(4), dbVideogames])
       .then(response => {
         let [apiRes1, apiRes2, apiRes3, apiRes4, dbRes] = response;

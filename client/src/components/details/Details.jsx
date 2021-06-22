@@ -6,10 +6,12 @@ import './Details.css';
 
 function Details({ videogame }) {
   const [vg, setVg] = useState({})
+  useEffect(() => {return setVg({})}, [])
   useEffect(() => {
     setVg(videogame);
   }, [videogame])
   if (vg.name !== undefined) {
+    console.log(vg)
     return (
       <div className='detailsVideogame'>
         <img src={vg.img ? vg.img : noImage} className='detailsVideogameImage' alt='Videogame' />
@@ -20,7 +22,7 @@ function Details({ videogame }) {
         </div>
         <div className='detailsPlatforms'>
           <h3 className='detailsPlatformsTitle'>Platforms</h3>
-          <p className='detailsPlatformsContent'>{vg.platforms.map(p => <span key={p}>{p}</span>)}</p>
+          <p className='detailsPlatformsContent'>{/^[0-9]+$/.test(vg.id) ? vg.platforms.map(p => <span key={p.platform.id}>{p.platform.name}</span>) : vg.platforms.map(p => <span key={p.id}>{p.name}</span>)}</p>
         </div>
         <div className='detailsRating'>
           <h3 className='detailsRatingTitle'>Rating</h3>
@@ -28,7 +30,7 @@ function Details({ videogame }) {
         </div>
         <div className='detailsReleased'>
           <h3 className='detailsReleasedTitle'>Released</h3>
-          <p className='detailsReleasedContent'>{vg.released.slice(0, 10)}</p>
+          <p className='detailsReleasedContent'>{vg.released ? vg.released.slice(0, 10) : 'Released date not found'}</p>
         </div>
         <div className='detailsDescription'>
           <h3 className='detailsDescriptionTitle'>Description</h3>

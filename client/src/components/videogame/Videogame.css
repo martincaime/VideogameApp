@@ -1,36 +1,42 @@
 .videogameCard {
-  width: 325px;
-  height: 450px;;
-  border-radius: 15px;
-  background: rgb(0, 0, 0);
-  color: rgb(240, 240, 240);
-  box-shadow: 0px 0px 10px rgb(0, 200, 200);
+  width: 20rem;
+  height: 28rem;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  box-shadow: 0 0 1rem #00c8c8;
   text-align: center;
-  margin: 30px;
+  margin: 2rem;
   overflow: hidden;
   position: relative;
 }
 
+.videogameCard:hover {
+  box-shadow: 0 0 1rem #c800be;
+}
+
 .videogameImage {
   width: 100%;
-  height: 250px;
+  height: 13rem;
   object-fit: cover;
   object-position: center center;
 }
 
-.allGenres span {
-  box-shadow: 0px 0px 5px rgb(0, 200, 200);
-  border-radius: 5px;
-  padding: 5px;
-  margin: 7px;
+.videogameName{
+  margin-top: 0.5rem;
+}
 
+.allGenres span {
+  box-shadow: 0 0 0.5rem #00c8c8;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+  margin: 0.5rem;
 }
 
 .buttonInfo {
   background: transparent;
   border: none;
   outline: none;
-  color: rgb(240, 240, 240);
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -45,21 +51,20 @@
   background-color: transparent;
   width: 100%;
   border: none;
-  top: 290px;
   outline: none;
 }
 
 .active {
   position: absolute;
-  left: 5px;
-  top: 400px;
-  width: 40px;
+  left: 0.5rem;
+  top: 24.75rem;
+  width: 2.5rem;
 }
 
 .inactive {
-  width: 40px;
+  width: 2.5rem;
   position: absolute;
-  left: 5px;
-  top: 400px;
+  left: 0.5rem;
+  top: 24.75rem;
   filter: grayscale(1);
 }

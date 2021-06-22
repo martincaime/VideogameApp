@@ -48,6 +48,16 @@ export function getGenres() {
   }
 }
 
+export function getPlatforms() {
+  return function (dispatch) {
+    axios.get(`http://localhost:3001/platforms`)
+      .then((res) => dispatch({
+        type: 'GET_PLATFORMS',
+        payload: res.data
+      }))
+  }
+}
+
 export function addGame({ name, genres, description, released, rating, platforms }) {
   return function (dispatch) {
     const Game = { name, genres, description, released, rating, platforms }

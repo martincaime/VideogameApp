@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { addGame } from '../../redux/Actions';
 import './Creation.css';
 
-function Creation({ genres, addGame }) {
+function Creation({ genres, platforms, addGame }) {
   const [errors, setErrors] = useState({});
   const [newGame, setNewGame] = useState({
     name: '',
@@ -22,34 +22,28 @@ function Creation({ genres, addGame }) {
 
   function validate(input) {
     let errors = {};
-    if(!input.name) {
+    if (!input.name) {
       errors.name = 'Name is required';
     }
-    if(!input.description) {
+    if (!input.description) {
       errors.description = 'Description is required';
     }
-    if(input.platforms.length === 0) {
+    if (input.genres.length === 0) {
+      errors.genres = 'There must be at least one genre';
+    }
+    if (input.platforms.length === 0) {
       errors.platforms = 'There must be at least one platform';
     }
     return errors;
   };
 
   function handleChange(e) {
-    if(e.target.name === 'platforms') {
-      setNewGame({
-        ...newGame, [e.target.name]: [...newGame[e.target.name], e.target.value]
-      })
-      setErrors(validate({
-        ...newGame, [e.target.name]: [...newGame[e.target.name], e.target.value]
-      }))
-    } else {
-      setNewGame({
-        ...newGame, [e.target.name]: e.target.value
-      })
-      setErrors(validate({
-        ...newGame, [e.target.name]: e.target.value
-      }))
-    }
+    setNewGame({
+      ...newGame, [e.target.name]: e.target.value
+    })
+    setErrors(validate({
+      ...newGame, [e.target.name]: e.target.value
+    }))
   }
 
   return (
@@ -60,30 +54,20 @@ function Creation({ genres, addGame }) {
         {errors.name && <p className='danger'>{errors.name}</p>}
         <h3>Genres</h3>
         <label className='genresVideogameForm'>
-          {genres.map(g => <label key={g.id}>
+          {genres.map(g => <label className='checkboxLabel' key={g.id}>
             <input type='checkbox' name={g.name} value={g.id}
               onChange={e => setNewGame({ ...newGame, genres: [...newGame.genres, e.target.value] })} />{g.name}
           </label>
           )}
         </label>
+        {errors.genres && <p className='danger'>{errors.genres}</p>}
         <h3>Platforms</h3>
         <label className='platformsVideogameForm'>
-          <label>
-            <input type='checkbox' name='platforms' value='PC'
-              onChange={handleChange} />PC
-        </label>
-          <label>
-            <input type='checkbox' name='platforms' value='PlayStation'
-              onChange={handleChange} />PlayStation
-        </label>
-          <label>
-            <input type='checkbox' name='platforms' value='XBox'
-              onChange={handleChange} />XBox
-        </label>
-          <label>
-            <input type='checkbox' name='platforms' value='Nintendo'
-              onChange={handleChange} />Nintendo
-        </label>
+          {platforms.map(p => <label className='checkboxLabel' key={p.id}>
+            <input type='checkbox' name={p.name} value={p.id}
+              onChange={e => setNewGame({ ...newGame, platforms: [...newGame.platforms, e.target.value] })} />{p.name}
+          </label>
+          )}
         </label>
         {errors.platforms && <p className='danger'>{errors.platforms}</p>}
         <h3>Rating</h3>
@@ -93,7 +77,7 @@ function Creation({ genres, addGame }) {
         <h3>Description</h3>
         <textarea className='descriptionVideogameForm' name='description' onChange={handleChange} />
         {errors.description && <p className='danger'>{errors.description}</p>}
-        {!errors.name && !errors.description &&
+        {!errors.name && !errors.description && !errors.genres && !errors.platforms &&
           <button className='buttonCreateVideogame' type='submit' onClick={handleSubmit}>Create</button>}
       </form>
     </div>
@@ -102,7 +86,8 @@ function Creation({ genres, addGame }) {
 
 function mapStateToProps(state) {
   return {
-    genres: state.genres
+    genres: state.genres,
+    platforms: state.platforms
   }
 }
 

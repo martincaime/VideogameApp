@@ -2,108 +2,119 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 1000px;
-  margin: 160px auto;
-  color: rgb(240, 240, 240);
-  border-radius: 15px;
-  box-shadow: 0px 0px 10px rgb(0, 200, 200);
-  background-color: rgb(0, 0, 0);
+  width: 65rem;
+  padding: 1rem;
+  margin: 10rem auto;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem #00c8c8;
 }
 
 .nameVideogameForm {
   border: none;
   outline: none;
-  border-radius: 5px;
-  width: 500px;
+  border-radius: 0.25rem;
+  width: 20rem;
+  height: 1.5rem;
   margin: auto;
-  padding: 5px;
-  color: rgb(240, 240, 240);
-  box-shadow: 0px 0px 10px rgb(0, 200, 200);
-  background-color: rgb(0, 0, 0);
+  padding: 0.25rem;
+  color: #ffffff;
+  box-shadow: 0 0 0.5rem #00c8c8;
+  background-color: #000000;
 }
 
 .descriptionVideogameForm {
   border: none;
   outline: none;
-  border-radius: 5px;
-  width: 500px;
-  height: 100px;
+  border-radius: 0.25rem;
+  width: 25.5rem;
+  height: 5rem;
   margin: auto;
-  padding: 5px;
-  color: rgb(240, 240, 240);
-  box-shadow: 0px 0px 10px rgb(0, 200, 200);
-  background-color: rgb(0, 0, 0);
+  padding: 0.25rem;
+  color: #ffffff;
+  box-shadow: 0 0 0.5rem #00c8c8;
+  background-color: #000000;
 }
 
 .releasedVideogameForm {
   border: none;
   outline: none;
-  border-radius: 5px;
-  width: 130px;
+  border-radius: 0.25rem;
+  height: 1.5rem;
+  width: 8rem;
   margin: auto;
-  padding: 5px;
-  color: rgb(240, 240, 240);
-  box-shadow: 0px 0px 10px rgb(0, 200, 200);
-  background-color: rgb(0, 0, 0);
+  padding: 0.25rem;
+  color: #ffffff;
+  box-shadow: 0 0 0.5rem #00c8c8;
+  background-color: #000000;
 }
 
 .ratingVideogameForm {
   outline: none;
   border: none;
-  border-radius: 5px;
-  width: 130px;
+  border-radius: 0.25rem;
+  height: 1.5rem;
+  width: 2.5rem;
   margin: auto;
-  padding: 5px;
-  color: rgb(240, 240, 240);
-  box-shadow: 0px 0px 10px rgb(0, 200, 200);
-  background-color: rgb(0, 0, 0);
+  padding: 0.25rem;
+  color: #ffffff;
+  box-shadow: 0 0 0.5rem #00c8c8;
+  background-color: #000000;
 }
 
 .platformsVideogameForm {
-  border-radius: 5px;
+  border-radius: 0.25rem;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  padding: 5px;
-  width: 500px;
-  color: rgb(240, 240, 240);
-  box-shadow: 0px 0px 10px rgb(0, 200, 200);
+  justify-content: flex-start;
+  padding: 0.5rem;
+  width: 25rem;
+  color: #ffffff;
+  box-shadow: 0 0 0.5rem #00c8c8;
 }
 
 .genresVideogameForm {
-  border-radius: 5px;
+  border-radius: 0.25rem;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  padding: 5px;
-  width: 500px;
-  color: rgb(240, 240, 240);
-  box-shadow: 0px 0px 10px rgb(0, 200, 200);
+  justify-content: flex-start;
+  padding: 0.5rem;
+  width: 25rem;
+  color: #ffffff;
+  box-shadow: 0 0 0.5rem #00c8c8;
 }
 
 .buttonCreateVideogame {
   border: none;
   outline: none;
-  border-radius: 5px;
-  margin: 30px auto;
+  border-radius: 0.25rem;
+  margin: 2rem auto;
   font-size: inherit;
   cursor: pointer;
-  padding: 10px;
-  color: rgb(240, 240, 240);
-  box-shadow: 0px 0px 10px rgb(0, 200, 200);
-  background-color: rgb(0, 0, 0);
+  padding: 0.75rem;
+  color: #ffffff;
+  box-shadow: 0 0 0.5rem #00c8c8;
+  background-color: #000000;
 }
 
 .buttonCreateVideogame:hover {
-  background-color: rgb(25, 25, 25);
+  background-color: #202020;
 }
 
 .buttonCreateVideogame:active {
-  background-color: rgb(0, 0, 0);
+  background-color: #000000;
 }
 
 .danger {
-  color: rgb(220, 0, 0);
+  margin: 0.5rem;
+  color: #dc0000;
+}
+
+.checkboxLabel {
+  width: 12rem;
+  padding: 0.25rem;
+  display: flex;
+  justify-content: flex-start;
 }

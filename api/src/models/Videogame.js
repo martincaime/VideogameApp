@@ -20,10 +20,6 @@ module.exports = (sequelize) => {
     },
     rating: {
       type: DataTypes.DECIMAL
-    },
-    platforms: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
-      allowNull: false
     }
   });
 };

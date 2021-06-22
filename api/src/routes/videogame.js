@@ -1,4 +1,4 @@
-const { Videogame, Genre } = require('../db');
+const { Videogame, Genre, Platform } = require('../db');
 const { API_KEY } = process.env;
 const router = require('express').Router();
 const axios = require('axios');
@@ -18,14 +18,14 @@ router.get('/:id', (req, res) => {
           description: response.data.description,
           released: response.data.released,
           rating: response.data.rating,
-          platforms: response.data.platforms.map(p => (p.platform.name))
+          platforms: response.data.platforms
         }
         res.send(videogame);
       })
       .catch(e => console.error(e))
   }
   else {
-    Videogame.findByPk(id, { include: Genre })
+    Videogame.findByPk(id, { include: [Genre, Platform] })
       .then(response => {
         res.send(response)
       })
@@ -36,9 +36,10 @@ router.get('/:id', (req, res) => {
 router.post('/', async (req, res) => {
   let { name, genres, description, released, rating, platforms } = req.body;
   let id = uuidv4();
-  let videogame = { id, name, description, released, rating, platforms };
+  let videogame = { id, name, description, released, rating };
   let info = await Videogame.create(videogame);
   info.setGenres(genres);
+  info.setPlatforms(platforms)
   res.send(info)
 })
 

@@ -1,14 +1,17 @@
 .videogames {
   width: 100%;
-  position: absolute;
-  top: 130px;
+  top: 9rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
 .loading {
-  height: 50px;
+  height: 3rem;
   margin: auto;
-  margin-top: 300px;
+  margin-top: 10rem;
+}
+
+.searchFilter{
+  display: flex;
 }

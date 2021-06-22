@@ -1,16 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Search from '../search/Search';
 import './Filter.css';
 
 function Filter(props) {
 
   return (
-    <div>
-      <Search />
+    <div className='filtersAll'>
       <div className='filters'>
         <div className='dropdown'>
-          <button className='dropButton'>Filters</button>
+          <button className='material-icons dropButton'>filter_list</button>
           <div className='dropdownContent'>
             <button onClick={(e) => { e.preventDefault(); props.filter('user') }}>Created by me</button>
             <button onClick={(e) => { e.preventDefault(); props.filter('notuser') }}>API Videogames</button>
@@ -19,7 +17,7 @@ function Filter(props) {
           </div>
         </div>
         <div className='dropdown'>
-          <button className='dropButton'>Sort</button>
+          <button className='material-icons dropButton'>sort</button>
           <div className='dropdownContent'>
             <button onClick={(e) => { e.preventDefault(); props.sort('') }}>Most Relevant</button>
             <button onClick={(e) => { e.preventDefault(); props.sort('A-Z') }}>A-Z</button>
@@ -29,7 +27,7 @@ function Filter(props) {
           </div>
         </div>
         <div className='dropdown'>
-          <button className='dropButton' onClick={(e) => { e.preventDefault(); props.filter() }}>Clean Filters</button>
+          <button className='material-icons dropButton' onClick={(e) => { e.preventDefault(); props.filter() }}>clear</button>
         </div>
       </div>
     </div>

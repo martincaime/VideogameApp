@@ -1,40 +1,43 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { getGenres, getVideogames, searchVideogames } from '../../redux/Actions';
+import { getGenres, getPlatforms, getVideogames, searchVideogames } from '../../redux/Actions';
 import Videogame from '../videogame/Videogame';
 import Filter from '../filter/Filter';
 import Pagination from '../pagination/Pagination';
+import Search from '../search/Search';
 import noImage from '../../img/no-image.jpg';
 import loading from '../../img/loading.gif';
 import './Videogames.css';
 
 
-function Videogames({ videogames, location, searchVideogames, searchedVideogames, getGenres, getVideogames }) {
+function Videogames({ videogames, location, searchVideogames, searchedVideogames, getGenres, getPlatforms, getVideogames }) {
   const [vg, setVg] = useState([]);
   const [page, setPage] = useState(1)
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (location.search !== '') {
-      setPage(parseInt(location.search.slice(location.search.indexOf('=') + 1)))
+      setPage(parseInt(location.search.slice(location.search.indexOf('=') + 1)));
     }
   }, [location.search])
 
   useEffect(() => {
     getVideogames();
     getGenres();
-  }, [getVideogames, getGenres])
+    getPlatforms();
+  }, [getVideogames, getGenres, getPlatforms])
 
   useEffect(() => {
     if (searchedVideogames.length > 0) {
-      setVg(searchedVideogames)
+      setVg(searchedVideogames);
     }
     else {
-      setVg(videogames)
+      setVg(videogames);
     }
   }, [videogames, searchedVideogames])
 
   useEffect(() => {
-    return searchVideogames('')
+    return searchVideogames('');
   }, [searchVideogames])
 
   function sorting(param) {
@@ -75,14 +78,14 @@ function Videogames({ videogames, location, searchVideogames, searchedVideogames
   function filtering(param) {
     let numeric = /^[0-9]+$/
     if (param) {
-      if(param === 'user') {
+      if (param === 'user') {
         return setVg(vg.filter(v => !numeric.test(v.id)))
       }
-      else if(param === 'notuser') {
+      else if (param === 'notuser') {
         return setVg(vg.filter(v => numeric.test(v.id)))
       }
       else {
-      return setVg(vg.filter(v => v.genres.find(g => g.name === param)));
+        return setVg(vg.filter(v => v.genres.find(g => g.name === param)));
       }
     }
     else {
@@ -92,7 +95,11 @@ function Videogames({ videogames, location, searchVideogames, searchedVideogames
 
   return (
     <div>
-      <Filter filter={filtering} sort={sorting} />
+      <div className='searchFilter'>
+        <Search />
+        <Filter filter={filtering} sort={sorting} />
+      </div>
+      <Pagination allGames={vg} page={page} />
       {videogames.length > 0 ?
         <div className='videogames'>
           {vg.slice((page - 1) * 15, page * 15).map(v =>
@@ -108,7 +115,7 @@ function Videogames({ videogames, location, searchVideogames, searchedVideogames
         </div>
         :
         <div className='noVideogames'>
-          <img className='loading' src={loading} alt='Loading'/>
+          <img className='loading' src={loading} alt='Loading' />
         </div>}
       <Pagination allGames={vg} page={page} />
     </div>
@@ -127,7 +134,8 @@ function mapDispatchToProps(dispatch) {
   return {
     searchVideogames: (name) => dispatch(searchVideogames(name)),
     getVideogames: () => dispatch(getVideogames()),
-    getGenres: () => dispatch(getGenres())
+    getGenres: () => dispatch(getGenres()),
+    getPlatforms: () => dispatch(getPlatforms())
   }
 }
 

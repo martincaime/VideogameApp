@@ -25,10 +25,12 @@ let entries = Object.entries(sequelize.models);
 let capsEntries = entries.map((entry) => [entry[0][0].toUpperCase() + entry[0].slice(1), entry[1]]);
 sequelize.models = Object.fromEntries(capsEntries);
 
-const { Videogame, Genre } = sequelize.models;
+const { Videogame, Genre, Platform } = sequelize.models;
 
 Videogame.belongsToMany(Genre, {through: 'videogame_genres'});
 Genre.belongsToMany(Videogame, {through: 'videogame_genres'});
+Videogame.belongsToMany(Platform, {through: 'videogame_platforms'});
+Platform.belongsToMany(Videogame, {through: 'videogame_platforms'});
 
 module.exports = {
   ...sequelize.models,
